@@ -5,8 +5,8 @@ if sys.version_info[:2] == (3, 11):
     SASA.main()
 
 elif sys.version_info[:2] == (3, 13):
-    import BNBB
-    BNBB.main()
+    import ASAS
+    ASAS.main()
 
 else:
     raise RuntimeError(
