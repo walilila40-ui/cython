@@ -28,17 +28,17 @@ if not so_path.exists():
 print(f"[+] Python: {version[0]}.{version[1]}")
 print(f"[+] Loading: {so_name}")
 
-spec = importlib.util.spec_from_file_location("ASAS", str(so_path))
+spec = importlib.util.spec_from_file_location("AUTO_file", str(so_path))
 
 if spec is None or spec.loader is None:
     print("[!] Module load nahi ho saka.")
     sys.exit(1)
 
 ASAS = importlib.util.module_from_spec(spec)
-sys.modules["ASAS"] = ASAS
+sys.modules["AUTO_file"] = AUTO_file
 
 try:
-    spec.loader.exec_module(ASAS)
+    spec.loader.exec_module(AUTO_file)
     print("[✓] Module successfully loaded.")
 except Exception as e:
     print(f"[!] Module error: {e}")
